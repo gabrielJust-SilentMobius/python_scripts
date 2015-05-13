@@ -4,14 +4,16 @@ Purpose: see wireless probes sent by devices at your phisical area.
 created by : br0k3ngl255
 
 '''
+###Libs
 import os
 import logging
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 from scapy.all import *
-
-interface = 'mon0'
+###Vars
+interface = 'wlan0mon'
 clients = []
 essid = []
+###Funcs
 def sniffmgmt(packet):
     types = (0, 2, 4, 8)
     if packet.haslayer(Dot11):
@@ -21,5 +23,8 @@ def sniffmgmt(packet):
                 
                 clients.append(packet.addr2)
                 clients.append(packet.info)
+###
+#Main
+###
+sniff(iface=interface, prn=sniffmgmt)
 
-capture.sniff(iface=interface, prn=sniffmgmt)
