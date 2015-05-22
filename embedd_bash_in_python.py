@@ -12,8 +12,7 @@ import subprocess
 
 ###Funcs/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 def bash(cmd):
-    os.system('cmd')
-  
+     os.system(cmd)   
 
 def sh(cmd):
      os.system('bash -c "%s"' % cmd)
