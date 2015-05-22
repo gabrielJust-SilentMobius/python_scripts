@@ -6,14 +6,14 @@
 #
 ################################################################
 
-#importing libs
+#importing libs ++++++++++++++++++++++++++++++++++++++++++++++++++
 import os
 import subprocess
 
+###Funcs/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 def bash(cmd):
     os.system('cmd')
   
 
 def sh(cmd):
-   os.system('bash -c %s' %script)
-
+     os.system('bash -c "%s"' % cmd)
